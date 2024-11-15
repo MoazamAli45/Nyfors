@@ -384,18 +384,18 @@
             </div>
           </div>
         </div>
-
-        <!-- Plasma Pen Section -->
-        <div x-data="{ isOpen: false }">
+        <div class="mb-16" x-data="{ isOpen: false }">
           <div class="flex flex-col items-center mb-8">
             <div class="w-16 h-16 mb-6 text-brand">
-              <img src="./assets/pen.svg" alt="Services" class="h-16 w-16" />
+              <img src="./assets/pen.svg" alt="Plasma Pen" class="h-16 w-16" />
             </div>
             <h2 class="text-3xl font-semibold text-center">Plasma pen</h2>
           </div>
 
-          <div class="prose prose-pink max-w-none">
-            <p class="text-gray-700">
+          <div
+            class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6"
+          >
+            <p class="text-gray-700 mb-4">
               En plasmapenna är en handhållen enhet som använder en liten
               elektrisk laddning för att jonisera gaser i luften, vilket skapar
               en plasma. Denna plasma används för att behandla en mängd olika
@@ -404,15 +404,15 @@
             </p>
 
             <div
-              class="mt-4 bg-pink-50 p-6 rounded-lg cursor-pointer"
-              x-on:click="isOpen = !isOpen"
+              class="relative overflow-hidden transition-all duration-300"
+              :class="isOpen ? 'max-h-[1000px]' : 'max-h-20'"
             >
-              <p class="text-gray-700 mb-2">
+              <p class="text-gray-700 mb-4">
                 Under behandlingen hålls plasmapennan nära huden, vilket skapar
                 en liten elektrisk båge som förångar hudens översta lager.
               </p>
 
-              <div x-show="isOpen" x-transition class="text-gray-700 space-y-4">
+              <div class="text-gray-700 space-y-4" x-show="isOpen" x-transition>
                 <p>
                   Denna process stimulerar produktionen av kollagen och elastin,
                   vilket hjälper till att strama upp och läka huden.
@@ -428,44 +428,44 @@
                   obehag och stillestånd, inklusive rodnad, svullnad och sår.
                 </p>
               </div>
-
-              <button class="mt-4 text-brand font-medium flex items-center">
-                <span x-text="isOpen ? 'Visa mindre' : 'Läs mer'"></span>
-                <svg
-                  class="w-4 h-4 ml-2 transform transition-transform duration-200"
-                  :class="isOpen ? 'rotate-180' : ''"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
             </div>
+
+            <button
+              @click="isOpen = !isOpen"
+              class="mt-4 text-brand hover:text-brand/80 font-medium flex items-center transition-colors duration-300"
+            >
+              <span x-text="isOpen ? 'Visa mindre' : 'Läs mer'"></span>
+              <svg
+                class="w-5 h-5 ml-2 transform transition-transform duration-300"
+                :class="isOpen ? 'rotate-180' : ''"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
       <!--  LAST SECTION -->
       <div class="container mx-auto px-4 py-8 max-w-4xl">
         <!-- Teeth Whitening Section -->
-        <div class="mb-16" x-data="{ showDetails: false }">
+        <div class="mb-16" x-data="{ isOpen: false }">
           <div class="flex flex-col items-center mb-8">
-            <div class="w-16 h-16 mb-4">
+            <div class="w-16 h-16 mb-6 text-brand">
               <img
                 src="./assets/tendblekning.svg"
                 alt="Tandblekning"
                 class="h-16 w-16"
               />
             </div>
-            <h2 class="text-3xl font-semibold text-center mb-2">
-              Tandblekning
-            </h2>
+            <h2 class="text-3xl font-semibold text-center">Tandblekning</h2>
           </div>
 
           <div
@@ -481,34 +481,44 @@
 
             <div
               class="relative overflow-hidden transition-all duration-300"
-              :class="showDetails ? 'max-h-96' : 'max-h-20'"
-              x-transition
+              :class="isOpen ? 'max-h-[1000px]' : 'max-h-20'"
             >
               <p class="text-gray-700 mb-4">
                 Det vanligaste tandblekningsmedlet innehåller tandblekningsgel
                 som innehåller en viss sorts väteperoxid med höjda syrenivåer
-                efter aktivering. Detta är kan köpas på apotek eller online, och
-                de flesta innehåller en aktiv ingrediens som kallas väteperoxid
-                eller karbamidperoxid som hjälper till att bleka tänderna.
+                efter aktivering.
               </p>
-              <p class="text-gray-700">
-                Professionell tandblekning utförs vanligtvis av tandläkare eller
-                tandbyggmästare och kan ge mer dramatiska resultat än
-                över-disk-produkter. Under en professionell tandblekning,
-                applicerar tandläkaren eller tandbyggmästaren en starkare
-                blekningsgel på tänderna och använder en special lampa eller
-                laser för att aktivera och öka effektiviteten.
-              </p>
+
+              <div class="text-gray-700 space-y-4" x-show="isOpen" x-transition>
+                <p>
+                  Detta är kan köpas på apotek eller online, och de flesta
+                  innehåller en aktiv ingrediens som kallas väteperoxid eller
+                  karbamidperoxid som hjälper till att bleka tänderna.
+                </p>
+                <p>
+                  Professionell tandblekning utförs vanligtvis av tandläkare
+                  eller tandbyggmästare och kan ge mer dramatiska resultat än
+                  över-disk-produkter. Under en professionell tandblekning,
+                  applicerar tandläkaren eller tandbyggmästaren en starkare
+                  blekningsgel på tänderna och använder en special lampa eller
+                  laser för att aktivera och öka effektiviteten.
+                </p>
+                <p class="font-semibold text-brand">
+                  Det är viktigt att konsultera en tandläkare innan du påbörjar
+                  någon form av tandblekning för att säkerställa att det är
+                  säkert och lämpligt för dina tänder.
+                </p>
+              </div>
             </div>
 
             <button
-              @click="showDetails = !showDetails"
+              @click="isOpen = !isOpen"
               class="mt-4 text-brand hover:text-brand/80 font-medium flex items-center transition-colors duration-300"
             >
-              <span x-text="showDetails ? 'Visa mindre' : 'Läs mer'"></span>
+              <span x-text="isOpen ? 'Visa mindre' : 'Läs mer'"></span>
               <svg
                 class="w-5 h-5 ml-2 transform transition-transform duration-300"
-                :class="showDetails ? 'rotate-180' : ''"
+                :class="isOpen ? 'rotate-180' : ''"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
