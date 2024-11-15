@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hårborttagning med laser - Prislista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <header class="absolute w-full top-0 z-50">
+      <nav
+        class="container md:px-5 md:py-10 px-4 py-4 flex items-center justify-between"
+      >
+        <a href="/" class="flex-shrink-0">
+          <img
+            src="./assets/logo.png"
+            alt="Nyfors Laserklinik"
+            class="h-12 md:h-16"
+          />
+        </a>
+        <div class="hidden lg:flex items-center space-x-8">
+          <a
+            href="/src/index.html"
+            class="hover:text-[#DD87A5] text-brand transition-colors"
+            >Hem</a
+          >
+          <a
+            href="/src/priser.html"
+            class="hover:text-[#DD87A5] text-brand transition-colors"
+            >Priser</a
+          >
+          <a href="#" class="hover:text-[#DD87A5] text-brand transition-colors"
+            >Kontakta</a
+          >
+          <a
+            href="tel:076-222 09 90"
+            class="flex items-center px-6 py-2 rounded-full border-2 border-brand text-brand hover:text-[#DD87A5] transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-2"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            076-222 09 90
+          </a>
+        </div>
+        <button
+          @click="isOpen = !isOpen"
+          class="lg:hidden text-white p-2"
+          aria-label="Toggle Menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <div class="container mx-auto px-4 mt-24 py-8">
+      <h1 class="text-xl md:text-3xl font-bold text-center mb-8">
+        Hårborttagning med laser
+      </h1>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div id="women-prices" class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold text-center mb-6">
+            Priser för kvinnor
+          </h2>
+          <!-- Women's prices will be inserted here -->
+        </div>
+
+        <div id="men-prices" class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold text-center mb-6">
+            Priser för män
+          </h2>
+          <!-- Men's prices will be inserted here -->
+        </div>
+      </div>
+
+      <!-- Additional Services Section -->
+      <div class="grid md:grid-cols-2 gap-8 mt-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold text-center mb-6">Tandblekning</h2>
+          <div
+            class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+          >
+            <span class="font-medium">Tandblekning</span>
+            <span class="text-right">995 SEK</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold text-center mb-6">Plasma Pen</h2>
+          <div id="plasma-prices">
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Rökrynkor</span>
+              <span class="text-right">1700 SEK</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Övre ögonlock</span>
+              <span class="text-right">2200 SEK</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Under ögonlock</span>
+              <span class="text-right">2200 SEK</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Kråksparkar</span>
+              <span class="text-right">2200 SEK</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Ögonbrynslyft</span>
+              <span class="text-right">2200 SEK</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Övre- och undre ögonlock</span>
+              <span class="text-right">4000 SEK</span>
+            </div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Hals</span>
+              <span class="text-right">5000 SEK</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kosmetisk och tatuering Section -->
+      <div class="bg-white p-6 rounded-lg shadow-md mt-8">
+        <h2 class="text-2xl font-semibold text-center mb-6">
+          Kosmetisk och tatuering
+        </h2>
+        <div class="space-y-4">
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Eyeliner / Eyelash Enhancement</span>
+              <span class="text-right min-w-[70px]">1500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Eyeliner tattoo is an advanced permanent makeup procedure that
+              recreates the look of wearing eyeliner. 120 minuter.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Eyeliner / Eyelash Enhancement </span>
+              <span class="text-right min-w-[70px]">2000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Återbesök inom 90 dagar ingår i priset. Gäller endast första gångs
+              tatuerade Eyeliner / Eyelash EnhancementEndast EU godkända
+              bedövningar, färger och engångsnålar används vid våra
+              behandlingar.Alla priser på våra behandlingarär en från pris.Vi
+              vill påminna om vikten av att boka om eller att boka av tider i
+              god tid (24 timmar innan), då vi debiterar fullt pris för
+              uteblivna eller sent avbokade/ombokade besök.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Eyeliner / Eyelash Enhancement </span>
+              <span class="text-right min-w-[70px]">1000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Påfyllning av Eyeliner / Eyelash Enhancement inom ett år.Endast EU
+              godkända bedövningar, färger och engångsnålar används vid våra
+              behandlingar.Alla priser på våra behandlingarär en från pris.Vi
+              vill påminna om vikten av att boka om eller att boka av tider i
+              god tid (24 timmar innan), då vi debiterar fullt pris för
+              uteblivna eller sent avbokade/ombokade besök.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Camouflage of Areola</span>
+              <span class="text-right min-w-[70px]">4000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              FÖR AREOLA REPIGMENTERING EFTER REKONSTRUKTION AV BRÖSTVÄVNADER
+              ELLER FÖR AREOLA ÄRRKAMOUFLAGE (BRÖSTFÖRSTORING, BRÖSTLYFT ELLER
+              REDUKTION). ENBRÖSTBEHANDLING. 150 minuter.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Camouflage of Dark circles</span>
+              <span class="text-right min-w-[70px]">2500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Kamouflage av mörka ringar. De kan få dig att se trött ut och
+              föråldra dig mer. Om du vill vakna vacker varje dag och inte oroa
+              dig för att lägga någon concealer eller något annat smink för att
+              dölja den otäliga visuella effekten som en mörk ring kan orsaka så
+              är Dark Circles Camouflage den rekommenderade behandlingen för
+              dig.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Camouflage of Stretch marks</span>
+              <span class="text-right min-w-[70px]">2500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Så, vad är kamouflage med bristningar? Det är en process där vi
+              matchar pigmenten till din hudton och med hjälp av en digital
+              enhet implementerar vi pigment i huden. Vi täcker missfärgning av
+              bristningar och ger med en mjuk pigmentering så att de är mindre
+              synliga. Pris är från 2500:-.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Camouflage Scars</span>
+              <span class="text-right min-w-[70px]">1500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Är kamouflage makeup att leva med är kan vara extremt svårt och
+              har en inverkan på din vardag och ditt självförtroende. Vi
+              använder flera tekniker för att mula upp strukturen på ärr och
+              kamouflera dem med permanent makeup. Pris är från 1500:-.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Camouflage Vitiligo</span>
+              <span class="text-right min-w-[70px]">2500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              MicroArt vitiligo kamouflagebhandling är en semipermanent
+              makeupprocedur som håller i flera på huden utan att tvättas av.
+              Det är den ultimata säkra och effektiva behandlingen för vitiligo
+              utan några biverkningar - och det kommer inte att få vitiligo att
+              sprida sig. MicroArt-proceduren förklarar liv. Även om det inte
+              finns något botemedel mot vitiligo finns det ingen annan form av
+              kosmetisk tatuering eller mikropigmentering som MicroArt. MicroArt
+              använder banbrytande utrustning, anpassade blandade pigmentfärger
+              och ett system designat för att säkerställa resultat på naturligt
+              sätt ingen kan slå sig att du någonsin haft vitiligo. Pris är från
+              2500:-
+            </p>
+          </div>
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Tricopigmentation (Scalp) </span>
+              <span class="text-right min-w-[70px]">3000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              SCALP MICROPIGMENTATION Skalp Mikropigmentering i hårbotten är en
+              behandling där små syntetiska folliklar appliceras på din
+              hårbotten med hjälp av ett organiskt pigment för att skapa en
+              illusion av hårsäckar. Behandlingen är icke kirurgiskt och nästan
+              smärtfritt. till skillnad från tatuering appliceras pigmenten på
+              epidermis för bästa resultat. Pris är från pris : 3000:-
+            </p>
+          </div>
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Överlapping av gammal Permanent make up (cover up)</span
+              >
+              <span class="text-right min-w-[70px]">2000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              The overlap of permanent make upPRIS KAN VARIERA BEROENDE PÅ
+              ÖNSKAD RESULTAT. PRIS FRÅN 2000
+            </p>
+          </div>
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent make up / Kosmetisk tatuering / Nya Ögonbryn</span
+              >
+              <span class="text-right min-w-[70px]">2000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Endast EU godkända bedövningar, färger och engångsnålar används
+              vid våra behandlingar.Alla priser på våra behandlingarär en från
+              pris.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent make up / Nya Ögonbryn och Nya Läppar ( Paket
+                erbjudanden)</span
+              >
+              <span class="text-right min-w-[70px]">4500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Paket erbjudanden - Återbesök inom 90 dagar ingår i priset.Endast
+              EU godkända bedövningar, färger och engångsnålar används vid våra
+              behandlingar.Alla priser på våra behandlingarär en från pris.
+            </p>
+          </div>
+          <!-- First Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent make up / Kosmetisk tatuering / Nya Läppar</span
+              >
+              <span class="text-right min-w-[70px]">2000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Endast EU godkända bedövningar, färger och engångsnålar används
+              vid våra behandlingar.Alla priser på våra behandlingar är en från
+              pris.
+            </p>
+          </div>
+
+          <!-- Second Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent make up / Påfyllning / Läppar</span
+              >
+              <span class="text-right min-w-[70px]">1000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Påfyllning av ögonbryn / läppar inom ett år.Endast EU godkända
+              bedövningar, färger och engångsnålar används vid våra
+              behandlingar.Alla priser på våra behandlingar är en från pris.
+            </p>
+          </div>
+
+          <!-- Third Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent makeup / Påfyllning / Läppar</span
+              >
+              <span class="text-right min-w-[70px]">1500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Påfyllning av ögonbryn / läppar efter ett år.Endast EU godkända
+              bedövningar, färger och engångsnålar används vid våra
+              behandlingar.Alla priser på våra behandlingar är en från pris.
+            </p>
+          </div>
+
+          <!-- Fourth Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent Make up - Nya Ögonbryn (återbesök inom 90 dgr ingår i
+                priset)</span
+              >
+              <span class="text-right min-w-[70px]">2500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Återbesök inom 90 dagar ingår i priset. Gäller endast första gångs
+              tatuerade ögonbryn/läppar.Endast EU godkända bedövningar, färger
+              och engångsnålar används vid våra behandlingar.Alla priser på våra
+              behandlingar är en från pris.
+            </p>
+          </div>
+
+          <!-- Fifth Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent Make up - Nya Läppar (återbesök inom 90 dgr ingår i
+                priset)</span
+              >
+              <span class="text-right min-w-[70px]">2500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Återbesök inom 90 dgr ingår i priset. Gäller endast första gångs
+              tatuerade ögonbryn/läppar.Endast EU godkända bedövningar, färger
+              och engångsnålar används vid våra behandlingar.Alla priser på våra
+              behandlingar är en från pris.
+            </p>
+          </div>
+
+          <!-- Sixth Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent Make up - Påfyllning / Ögonbryn</span
+              >
+              <span class="text-right min-w-[70px]">1000 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Permanent make-up Artist / Irma Babkiniene. Påfyllning av
+              ögonbryn/läppar inom ett år.Endast EU godkända bedövningar, färger
+              och engångsnålar används vid våra behandlingar.Alla priser på våra
+              behandlingar är en från pris.Vi vill påminna om vikten av att boka
+              om eller att boka av tider i god tid (24 timmar innan), då vi
+              debiterar fullt pris för uteblivna eller sent avbokade/ombokade
+              besök.
+            </p>
+          </div>
+
+          <!-- Seventh Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Permanent Make up - Påfyllning / Ögonbryn</span
+              >
+              <span class="text-right min-w-[70px]">1500 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Påfyllning av ögonbryn / läppar efter ett år.Endast EU godkända
+              bedövningar, färger och engångsnålar används vid våra
+              behandlingar.Alla priser på våra behandlingar är en från pris.
+            </p>
+          </div>
+
+          <!-- Eighth Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium">Brynlektion</span>
+              <span class="text-right min-w-[70px]">400 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Lär dig själv. Lektion om hur man ta hand om ögonbryn.
+            </p>
+          </div>
+
+          <!-- Ninth Item -->
+          <div>
+            <div
+              class="flex justify-between items-center border-b border-dotted border-gray-300 py-2"
+            >
+              <span class="font-medium"
+                >Brows Lamination/ Lift + keratin Form/Färg</span
+              >
+              <span class="text-right min-w-[70px]">550 SEK</span>
+            </div>
+            <p class="text-sm text-justify text-gray-600 mt-1">
+              Laminering är som inte bara förbättrar ögonbryns utseende, men
+              läker också dem. Hon utses i händelse av bristande ögonbryn eller
+              otäckt utseende. Och även med mycket tunna av natur eller utmattat
+              från färgning med kemikalier, här för att återställa dem.
+              Laminering är en idealisk lösning för tjejer med tunna, försvagade
+              hår, asymmetriska ögonbryn.Förutom laming kan ögonbrynen få grund
+              av proceduren blir håret starkare vilket ger ögonbrynen en riktig,
+              vacker form. Samtidigt ser håren ut naturliga, de har en glans. De
+              håller sig i 4-6 veckor
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-5 items-center my-10">
+        <img
+          class="w-[50px] h-[50px]"
+          src="/src//icons/insta.PNG"
+          alt="insta-icon"
+        />
+        <a href="https://www.instagram.com/nyforslaser/"
+          ><span class="text-[#2E3E60] text-2xl"
+            >Följ oss på instagram @nyforslaser</span
+          ></a
+        >
+      </div>
+    </div>
+    <footer class="bg-[#1B2336] px-4 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-between">
+          <!-- Logo and Company Name -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <img class="mt-5" src="/src//icons/logo2.png" alt="" />
+            <!-- Opening Hours and Social Media -->
+            <div class="mt-8 flex flex-col gap-6">
+              <div class="w-full mb-4">
+                <h4 class="text-[#6B7284] mb-2">Öppettider:</h4>
+                <p class="mb-1">
+                  <i class="far fa-calendar-alt"></i> Mån - Fre 10.00 - 18.00
+                </p>
+                <p>
+                  <i class="far fa-calendar-alt"></i> Lördagar 10.00 - 14.00
+                </p>
+              </div>
+              <div class="w-full flex justify-start">
+                <a
+                  href="#"
+                  class="text-white text-[10px] hover:text-[#DD87A5] mr-4"
+                  ><i
+                    class="fab fa-facebook-f bg-[#DD87A5] hover:bg-white px-4 py-3 rounded-full fa-2x"
+                  ></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-white text-[10px] hover:text-[#DD87A5] mr-4"
+                  ><i
+                    class="fab fa-instagram bg-[#DD87A5] hover:bg-white px-4 py-3 rounded-full fa-2x"
+                  ></i
+                ></a>
+                <a
+                  href="#"
+                  class="text-white text-[10px] hover:text-[#DD87A5] mr-4"
+                  ><i
+                    class="fab fa-google-plus-g bg-[#DD87A5] hover:bg-white px-3 py-3 rounded-full fa-2x"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nyfors Laserklinik Column -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="text-[#6B7284] text-lg mb-4">Nyfors Laserklinik</h3>
+            <ul>
+              <li class="mb-2"><i class="fas fa-home mr-2"></i> Hem</li>
+              <li class="mb-2"><i class="fas fa-tag mr-2"></i> Priser</li>
+              <li class="mb-2"><i class="fas fa-phone mr-2"></i> Kontakta</li>
+              <li class="mb-2">
+                <i class="fas fa-cookie mr-2"></i> Cookiespolicy
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-user-shield mr-2"></i> Integritetspolicy
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tjänster Column -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="text-[#6B7284] text-lg mb-4">Tjänster</h3>
+            <ul>
+              <li class="mb-2">
+                <i class="fas fa-fire mr-2"></i> Hårborttagning med laser
+              </li>
+              <li class="mb-2"><i class="fas fa-fire mr-2"></i> Plasma pen</li>
+              <li class="mb-2">
+                <i class="fas fa-fire mr-2"></i> Tandblekning
+              </li>
+              <li class="mb-2"><i class="fas fa-fire mr-2"></i> Kosmetick</li>
+            </ul>
+          </div>
+
+          <!-- Kontaka oss Column -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="text-[#6B7284] text-lg mb-4">Kontaka oss</h3>
+            <ul>
+              <li class="mb-2"><i class="fas fa-phone mr-2"></i> 0762220990</li>
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt mr-2"></i> Norra Brogatan 1-3,
+                63225, Eskilstuna
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope mr-2"></i> Info@nyforslaser.se
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="py-5 text-white bg-[#151C2B] text-center">
+      <p>&copy; 2023 | Skappad av Mittsida.se</p>
+    </div>
+    <script>
+      const womenPrices = [
+        { service: "Överläpp", price: "100 SEK" },
+        { service: "Haka", price: "100 SEK" },
+        { service: "Kind", price: "100 SEK" },
+        { service: "Hals", price: "100 SEK" },
+        { service: "Nacke - hårfäste", price: "100 SEK" },
+        { service: "Bröstvårtor", price: "100 SEK" },
+        { service: "Magsträng", price: "100 SEK" },
+        { service: "Svank kvinna", price: "120 SEK" },
+        { service: "Bröst kvinna", price: "200 SEK" },
+        { service: "Mage", price: "300 SEK" },
+        { service: "Hela ansiktet", price: "300 SEK" },
+        { service: "Armhålor", price: "300 SEK" },
+        { service: "Underarmar", price: "300 SEK" },
+        { service: "Rygg kvinna", price: "300 SEK" },
+        { service: "Bikinilinje", price: "300 SEK" },
+        { service: "Brasilianskt", price: "350 SEK" },
+        { service: "Bikini - insida lår", price: "400 SEK" },
+        { service: "Bikini/Hollywood", price: "400 SEK" },
+        { service: "Hela armar kvinna", price: "450 SEK" },
+        { service: "Underben", price: "450 SEK" },
+        { service: "Rumpa", price: "500 SEK" },
+        { service: "Lår", price: "500 SEK" },
+        { service: "Armar, ansikte och axl", price: "800 SEK" },
+        { service: "Hela ben - kvinna", price: "900 SEK" },
+        { service: "Underben, bikini och axil", price: "1000 SEK" },
+        { service: "Underben, brasiliansk. axil", price: "1100 SEK" },
+        { service: "Hela ben och bikini", price: "1100 SEK" },
+        { service: "Underben, hollywood och axil", price: "1200 SEK" },
+        { service: "Hela ben - Brasiliansk", price: "1200 SEK" },
+        { service: "Hela ben - bikini och axil", price: "1250 SEK" },
+        { service: "Hela ben - Brasiliansk, axil", price: "1300 SEK" },
+        { service: "Hel överkropp kvinna", price: "1300 SEK" },
+        { service: "Hela ben - Hollywood", price: "1300 SEK" },
+        { service: "Hela ben - Hollywood, axil", price: "1400 SEK" },
+        {
+          service: "Hel kropp kvinna <br/>(ansikte ingår ej)",
+          price: "2500 SEK",
+        },
+      ];
+
+      const menPrices = [
+        { service: "Kind", price: "100" },
+        { service: "Haka", price: "100" },
+        { service: "Hals", price: "100" },
+        { service: "Magsträng", price: "100" },
+        { service: "Nacke - hårfäste", price: "100" },
+        { service: "Svank man", price: "200" },
+        { service: "Bröst", price: "250" },
+        { service: "Mage", price: "300" },
+        { service: "Armhålor", price: "300" },
+        { service: "Underarmar", price: "300" },
+        { service: "Skulderblad - axlar", price: "300" },
+        { service: "Hela armar man", price: "500" },
+        { service: "Bröst och mage", price: "500" },
+        { service: "Rumpa", price: "500" },
+        { service: "Lår", price: "500" },
+        { service: "Rygg, axlar och nacke", price: "700" },
+        { service: "Bröst, mage & rygg", price: "900" },
+        { service: "Hela ben man", price: "1500" },
+        { service: "Hel överkropp man", price: "1600" },
+        { service: "Helkropp man <br/>(intim ingår ej)", price: "3200" },
+      ];
+
+      function renderPrices(prices, containerId) {
+        const container = document.getElementById(containerId);
+        prices.forEach((item) => {
+          const div = document.createElement("div");
+          div.className =
+            "flex justify-between items-center border-b border-dotted border-gray-300 py-2";
+          div.innerHTML = `
+                    <span class="font-medium">${item.service}</span>
+                    <span class="text-right">${item.price} SEK</span>
+                `;
+          container.appendChild(div);
+        });
+      }
+
+      renderPrices(womenPrices, "women-prices");
+      renderPrices(menPrices, "men-prices");
+    </script>
+  </body>
+</html>
