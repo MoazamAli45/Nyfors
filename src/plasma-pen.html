@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hårborttagning med laser - Prislista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+
+      /* Slide In */
+      .slide-enter {
+        transition: transform 300ms ease-out;
+      }
+      .slide-enter-start {
+        transform: translateX(100%);
+      }
+      .slide-enter-end {
+        transform: translateX(0%);
+      }
+
+      /* Slide Out */
+      .slide-leave {
+        transition: transform 300ms ease-in;
+      }
+      .slide-leave-start {
+        transform: translateX(0%);
+      }
+      .slide-leave-end {
+        transform: translateX(100%);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <header
+      class="absolute w-full top-0 z-50 pt-5 bg-white"
+      x-data="{ isOpen: false }"
+    >
+      <div class="container mx-auto flex h-16 items-center px-4 sm:px-8">
+        <a href="./index.html" class="mr-8 flex items-center gap-2">
+          <img
+            src="./icons/logo2.png"
+            alt="Nyfors Laserklinik"
+            class="h-10 w-auto"
+          />
+        </a>
+
+        <div class="ml-auto flex items-center gap-10">
+          <nav class="hidden items-center gap-6 md:flex">
+            <a
+              href="./index.html"
+              class="text-sm font-medium text-gray-900 hover:text-[#DF8FAB]"
+              >Hem</a
+            >
+            <a
+              href="./priser.html"
+              class="text-sm font-medium text-gray-900 hover:text-[#DF8FAB]"
+              >Priser</a
+            >
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-900 hover:text-[#DF8FAB]"
+              >Kontakta</a
+            >
+          </nav>
+          <a
+            href="tel:076-222 09 90"
+            class="items-center px-6 py-2 rounded-full border-2 border-[#DF8FAB] text-[#DF8FAB] hover:bg-[#DF8FAB] hover:text-white transition-colors hidden md:flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-2"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            076-222 09 90
+          </a>
+          <button
+            @click="isOpen = true"
+            class="text-gray-500 hover:text-gray-600 focus:outline-none md:hidden"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu overlay -->
+      <div
+        x-cloak
+        x-show="isOpen"
+        class="fixed inset-0 z-50 bg-black/50 md:hidden"
+        @click="isOpen = false"
+      ></div>
+
+      <!-- Mobile menu -->
+      <div
+        x-cloak
+        x-show="isOpen"
+        x-transition:enter="slide-enter"
+        x-transition:enter-start="slide-enter-start"
+        x-transition:enter-end="slide-enter-end"
+        x-transition:leave="slide-leave"
+        x-transition:leave-start="slide-leave-start"
+        x-transition:leave-end="slide-leave-end"
+        class="fixed inset-y-0 right-0 z-50 w-64 bg-black md:hidden"
+      >
+        <div class="flex h-full flex-col p-6">
+          <div class="flex justify-end">
+            <button
+              @click="isOpen = false"
+              class="text-white hover:text-gray-300"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <nav class="mt-8 flex flex-col space-y-6">
+            <a
+              href="./index.html"
+              @click="isOpen = false"
+              class="text-lg font-medium text-white hover:text-gray-300"
+              >Hem</a
+            >
+            <a
+              href="./priser.html"
+              @click="isOpen = false"
+              class="text-lg font-medium text-white hover:text-gray-300"
+              >Priser</a
+            >
+            <a
+              href="#"
+              @click="isOpen = false"
+              class="text-lg font-medium text-white hover:text-gray-300"
+              >Kontakta</a
+            >
+          </nav>
+          <div class="mt-auto">
+            <a
+              href="tel:076-222 09 90"
+              class="flex items-center px-6 py-2 rounded-full border-2 border-[#DF8FAB] text-[#DF8FAB] hover:bg-[#DF8FAB] hover:text-white transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-2"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              076-222 09 90
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container mx-auto px-4 mt-24 py-8">
+      <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header Section -->
+        <div class="mb-12 flex flex-col gap-5 items-center text-center">
+          <img
+            class="w-[100px] h-[100px]"
+            src="./icons/plams-icon1.svg"
+            alt="plasma-icon"
+          />
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            PLASMAPEN - SENASTE TEKNIK I ESKILSTUNA
+          </h1>
+          <p class="text-gray-600 text-left sm:text-justify max-w-2xl mx-auto">
+            De snabba resultaten från vår avancerade och icke-kirurgiska Plasma
+            Pen är helt fantastiska, nästan omedelbara och kan vara upp till 8
+            år - allt utan att behöva sutur, scalpell, ablation, kostsam och
+            invasiv kirurgi
+          </p>
+          <ul class="my-12 text-gray-600 space-y-2">
+            <li class="flex items-center">
+              <span class="w-4 sm:w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+              <p>
+                Senaste plasma pen från Clinicalsystem, Ögonlockslyft och
+                hudlyft utan operation
+              </p>
+            </li>
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+              Snabb och effektiv
+            </li>
+            <li class="flex items-center">
+              <span class="w-2 h-2 bg-pink-400 rounded-full mr-2"></span>
+              CE-märkta och FDA-godkänd PLASMAPEN
+            </li>
+          </ul>
+        </div>
+
+        <!-- Info Sections -->
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- What Is Section -->
+          <div class="flex flex-col items-center sm:items-start gap-2">
+            <img
+              src="./icons/plams-icon1.svg"
+              class="w-[100px] h-[100px]"
+              alt="plasma-icon"
+            />
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+              VAD ÄR PLASMA PEN?
+            </h2>
+            <p class="text-gray-600 mb-4">
+              Plasma är en icke-kirurgisk föryngrings behandling som erbjuder
+              överlägsg hud pålse och lyftning. Hudens kurt plasma-bågen stimmar
+              upp och drar cellerna närmare varandra. Det är den enda
+              behandlingen som framgångsrikt minskar överskott av huden.
+            </p>
+          </div>
+          <img src="./icons/plasma-img1.jpg" alt="" />
+          <!-- How It Works Section -->
+          <img src="./icons/plasma-img2.jpg" alt="" />
+          <div>
+            <div class="flex flex-col">
+              <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                HUR FUNKAR DET?
+              </h2>
+              <p class="text-gray-600 mb-4">
+                Plasmapenbehandlingen ger en liten plasma-blixt som hoppar från
+                spetsen till hud i en mikro-millimeter stor yta. Denna höga
+                punkt minimerar huden i en omedelbar radie - vilket minskar
+                överskottet av hud på det behandlade området. En serie små bruna
+                fläckar är strategiskt placerade i ett visst mönster för att
+                uppnå önskat resultat för det överlödiga huden.
+              </p>
+            </div>
+            <div class="mt-12 mb-5">
+              <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                FÖRDELAR MOT KIRURGI
+              </h2>
+              <ul class="space-y-4 text-gray-600">
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-pink-400 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Snabb läkning och återhämtning
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-pink-400 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Ingen risk för att sätta stort ärr eller knölig hud
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-pink-400 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Hudvänlig på det behandlade området starkt
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits Section -->
+      </div>
+      <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <!-- Header with Icon -->
+        <div class="text-center mb-12">
+          <div class="w-16 h-16 mx-auto mb-4 text-pink-400">
+            <img src="./icons/plasma-icon2.svg" alt="" />
+          </div>
+          <h1 class="text-3xl font-bold text-gray-800">Frågor Och Svar</h1>
+        </div>
+
+        <!-- FAQ Section -->
+        <div
+          class="space-y-4"
+          x-data="{
+            faqItems: [
+                { question: 'Vilka områden kan plasma pen behandla?', answer: ' Slapp hud kring ögonen såsom hängande ögonlock, påsar under ögonen och hamsterpåsar” på hals och kinder • Rynkor och fina linjer • Ojämn hy', isOpen: false },
+                { question: 'Vilket resultat kan man förvänta sig av plasma pen?', answer: 'Beroende på hudtyp, ålder, område och behandlingens intensitet är resultatet individuellt. Man kan bara strama åt en viss mängd hud vid varje behandlingstillfälle med plasma Pen, så personer med mycket överflödshud kan behöva flera behandlingar med plasma Pen. 2-3 behandlingar har visat sig vara optimalt för personer med väldigt mycket överflödig hud.', isOpen: false },
+                { question: 'Hur funkar plasma pen?', answer: 'Området som ska behandlas bedövas med Emla kräm i 20-30 minuter innan plasma Pen behandlingen påbörjas. Därefter “öppnar man små kanaler” man över området som ska Plasma behandlas. Det finns tre olika tekniker med olika funktion beroende på behandlingsområde och syfte. Vid ögonlockslyft bränner man små prickar i ett särskilt 5-punktsmönster, vilket är den mest effektiva metoden för åtstramning av huden.', isOpen: false },
+                { question: 'Hur länge håller resultatet av Plasma pen?', answer: 'Huduppstramningen som uppnås är permanent, dock fortsätter huden att åldras som vanligt efteråt. Kost, levnadsvanor och hudvård är faktorer som påverkar hudens åldrande och förutsättningar att bibehålla ett bra resultat.', isOpen: false },
+                { question: 'Vad är skillnaden på plasma pen utrustning på marknaden?', answer: 'Våra utrustningar är bland marknadens mest avancerade med CE och FDA godkännande.', isOpen: false },
+                
+                { question: 'Efter behandling', answer: 'hDirekt efter behandlingen syns de små brunaktiga prickarna tydligt och viss rodnad och svullnad kan uppstå efter behandlingen. En del patienter får svulnaden på över och under ögonlock till den tredje dagen och efter åt går svullnaden ner. Eftersom behandlingen är ytlig och det inte blir några sår kan man sminka över prickarna på huden. Prickarna blir till torra små skorpor som faller av efter 5-10 dagar. Svullnad kan uppstå de första 2-5 dagarna och går ner efter 3-5 dagar, och kan dämpas med kylblock. Behandlar man ögon kan man få stor svulnad runt ögon den 3-4 dagen. Viss rodnad kan synas på huden i upp till 6 veckor efter plasmapen behandlingen. Det är viktigt att skydda den behandlade huden med hög solskyddsfaktor de 3 första månaderna efter avslutad plasma Pen behandling för att undvika risk för hyperpigmentering etc.', isOpen: false }
+            ]
+        }"
+        >
+          <template x-for="(item, index) in faqItems" :key="index">
+            <div class="border-b border-gray-200">
+              <button
+                class="w-full py-4 flex justify-between items-center text-left"
+                @click="item.isOpen = !item.isOpen"
+              >
+                <span
+                  class="text-lg text-[#2E3E60]"
+                  x-text="item.question"
+                ></span>
+                <span
+                  class="text-blue-800 text-2xl transform transition-transform duration-300"
+                  :class="item.isOpen ? 'rotate-180' : 'rotate-0'"
+                >
+                  <!-- Use both symbols and toggle based on the state -->
+                  <span class="text-[25px] text-[#2E3E60]" x-show="!item.isOpen"
+                    >+</span
+                  >
+                  <span
+                    class="text-[35px] text-[#2E3E60] mt-5"
+                    x-show=" item.isOpen"
+                    >-</span
+                  >
+                </span>
+              </button>
+              <div
+                x-show="item.isOpen"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                class="pb-4 text-gray-600"
+              >
+                <p x-text="item.answer"></p>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+      <div class="flex flex-col gap-5 items-center my-10">
+        <img
+          class="w-[50px] h-[50px]"
+          src="./icons/insta.PNG"
+          alt="insta-icon"
+        />
+        <a class="text-center" href="https://www.instagram.com/nyforslaser/"
+          ><span class="text-[#2E3E60] text-lg sm:text-2xl"
+            >Följ oss på instagram @nyforslaser</span
+          ></a
+        >
+      </div>
+    </div>
+
+    <footer class="bg-[#1B2336] px-4 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-between">
+          <!-- Logo and Company Name -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <img class="mt-5" src="./icons/logo2.png" alt="" />
+            <!-- Opening Hours and Social Media -->
+            <div class="mt-8 flex flex-col gap-6">
+              <div class="w-full mb-4">
+                <h4 class="text-[#6B7284] mb-2">Öppettider:</h4>
+                <p class="mb-1">
+                  <i class="far fa-calendar-alt"></i> Mån - Fre 10.00 - 18.00
+                </p>
+                <p>
+                  <i class="far fa-calendar-alt"></i> Lördagar 10.00 - 14.00
+                </p>
+              </div>
+              <div class="w-full flex justify-start">
+                <a
+                  href="https://web.facebook.com/people/Nyfors-Laserklinik/100054408373835/"
+                  class="text-white text-[10px] hover:text-[#DD87A5] mr-4"
+                  ><i
+                    class="fab fa-facebook-f bg-[#DD87A5] hover:bg-white px-4 py-3 rounded-full fa-2x"
+                  ></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/nyforslaser/"
+                  class="text-white text-[10px] hover:text-[#DD87A5] mr-4"
+                  ><i
+                    class="fab fa-instagram bg-[#DD87A5] hover:bg-white px-4 py-3 rounded-full fa-2x"
+                  ></i
+                ></a>
+                <a
+                  href="https://www.google.com/search?q=nyfors+laserklinik&sxsrf=AJOqlzU9y4G0Jcup33GrMmBbkCTb6Nl-ng%3A1676494184430&source=hp&ei=aEXtY4zSF5CJxc8P2ImXsAg&iflsig=AK50M_UAAAAAY-1TeMGpP8Ym_HZqGDzURfyIB41ywZUr&oq=n&gs_lcp=Cgdnd3Mtd2l6EAEYATIECCMQJzIECCMQJzIECCMQJzILCC4QgAQQxwEQ0QMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgjEOoCECdQggRYggRglB5oAXAAeACAAYYCiAGGApIBAzItMZgBAKABAbABCg&sclient=gws-wiz"
+                  class="text-white text-[10px] hover:text-[#DD87A5] mr-4"
+                  ><i
+                    class="fab fa-google-plus-g bg-[#DD87A5] hover:bg-white px-3 py-3 rounded-full fa-2x"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nyfors Laserklinik Column -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="text-[#6B7284] text-lg mb-4">Nyfors Laserklinik</h3>
+            <ul>
+              <li class="mb-2"><i class="fas fa-home mr-2"></i> Hem</li>
+              <li class="mb-2"><i class="fas fa-tag mr-2"></i> Priser</li>
+              <li class="mb-2"><i class="fas fa-phone mr-2"></i> Kontakta</li>
+              <li class="mb-2">
+                <i class="fas fa-cookie mr-2"></i> Cookiespolicy
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-user-shield mr-2"></i> Integritetspolicy
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tjänster Column -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="text-[#6B7284] text-lg mb-4">Tjänster</h3>
+            <ul>
+              <li class="mb-2">
+                <i class="fas fa-fire mr-2"></i> Hårborttagning med laser
+              </li>
+              <li class="mb-2"><i class="fas fa-fire mr-2"></i> Plasma pen</li>
+              <li class="mb-2">
+                <i class="fas fa-fire mr-2"></i> Tandblekning
+              </li>
+              <li class="mb-2"><i class="fas fa-fire mr-2"></i> Kosmetick</li>
+            </ul>
+          </div>
+
+          <!-- Kontaka oss Column -->
+          <div class="w-full md:w-1/4 mb-6 md:mb-0">
+            <h3 class="text-[#6B7284] text-lg mb-4">Kontaka oss</h3>
+            <ul>
+              <li class="mb-2"><i class="fas fa-phone mr-2"></i> 0762220990</li>
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt mr-2"></i> Norra Brogatan 1-3,
+                63225, Eskilstuna
+              </li>
+              <li class="mb-2">
+                <i class="fas fa-envelope mr-2"></i> Info@nyforslaser.se
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="py-5 text-white bg-[#151C2B] text-center">
+      <p>&copy; 2023 | Skappad av Mittsida.se</p>
+    </div>
+    <script>
+      const womenPrices = [
+        { service: "Överläpp", price: "100 SEK" },
+        { service: "Haka", price: "100 SEK" },
+        { service: "Kind", price: "100 SEK" },
+        { service: "Hals", price: "100 SEK" },
+        { service: "Nacke - hårfäste", price: "100 SEK" },
+        { service: "Bröstvårtor", price: "100 SEK" },
+        { service: "Magsträng", price: "100 SEK" },
+        { service: "Svank kvinna", price: "120 SEK" },
+        { service: "Bröst kvinna", price: "200 SEK" },
+        { service: "Mage", price: "300 SEK" },
+        { service: "Hela ansiktet", price: "300 SEK" },
+        { service: "Armhålor", price: "300 SEK" },
+        { service: "Underarmar", price: "300 SEK" },
+        { service: "Rygg kvinna", price: "300 SEK" },
+        { service: "Bikinilinje", price: "300 SEK" },
+        { service: "Brasilianskt", price: "350 SEK" },
+        { service: "Bikini - insida lår", price: "400 SEK" },
+        { service: "Bikini/Hollywood", price: "400 SEK" },
+        { service: "Hela armar kvinna", price: "450 SEK" },
+        { service: "Underben", price: "450 SEK" },
+        { service: "Rumpa", price: "500 SEK" },
+        { service: "Lår", price: "500 SEK" },
+        { service: "Armar, ansikte och axl", price: "800 SEK" },
+        { service: "Hela ben - kvinna", price: "900 SEK" },
+        { service: "Underben, bikini och axil", price: "1000 SEK" },
+        { service: "Underben, brasiliansk. axil", price: "1100 SEK" },
+        { service: "Hela ben och bikini", price: "1100 SEK" },
+        { service: "Underben, hollywood och axil", price: "1200 SEK" },
+        { service: "Hela ben - Brasiliansk", price: "1200 SEK" },
+        { service: "Hela ben - bikini och axil", price: "1250 SEK" },
+        { service: "Hela ben - Brasiliansk, axil", price: "1300 SEK" },
+        { service: "Hel överkropp kvinna", price: "1300 SEK" },
+        { service: "Hela ben - Hollywood", price: "1300 SEK" },
+        { service: "Hela ben - Hollywood, axil", price: "1400 SEK" },
+        {
+          service: "Hel kropp kvinna <br/>(ansikte ingår ej)",
+          price: "2500 SEK",
+        },
+      ];
+
+      const menPrices = [
+        { service: "Kind", price: "100" },
+        { service: "Haka", price: "100" },
+        { service: "Hals", price: "100" },
+        { service: "Magsträng", price: "100" },
+        { service: "Nacke - hårfäste", price: "100" },
+        { service: "Svank man", price: "200" },
+        { service: "Bröst", price: "250" },
+        { service: "Mage", price: "300" },
+        { service: "Armhålor", price: "300" },
+        { service: "Underarmar", price: "300" },
+        { service: "Skulderblad - axlar", price: "300" },
+        { service: "Hela armar man", price: "500" },
+        { service: "Bröst och mage", price: "500" },
+        { service: "Rumpa", price: "500" },
+        { service: "Lår", price: "500" },
+        { service: "Rygg, axlar och nacke", price: "700" },
+        { service: "Bröst, mage & rygg", price: "900" },
+        { service: "Hela ben man", price: "1500" },
+        { service: "Hel överkropp man", price: "1600" },
+        { service: "Helkropp man <br/>(intim ingår ej)", price: "3200" },
+      ];
+
+      function renderPrices(prices, containerId) {
+        const container = document.getElementById(containerId);
+        prices.forEach((item) => {
+          const div = document.createElement("div");
+          div.className =
+            "flex justify-between items-center border-b border-dotted border-gray-300 py-2";
+          div.innerHTML = `
+                    <span class="font-medium">${item.service}</span>
+                    <span class="text-right">${item.price} SEK</span>
+                `;
+          container.appendChild(div);
+        });
+      }
+
+      renderPrices(womenPrices, "women-prices");
+      renderPrices(menPrices, "men-prices");
+    </script>
+  </body>
+</html>
